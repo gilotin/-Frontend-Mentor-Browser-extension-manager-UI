@@ -1,35 +1,48 @@
+import "./App.css";
+
 function App() {
     return (
         <>
-            Extensions List All Active Inactive
-            {/* <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below --> */}
-            DevLens Quickly inspect page layouts and visualize element boundaries. Remove StyleSpy
-            Instantly analyze and copy CSS from any webpage element. Remove SpeedBoost Optimizes
-            browser resource usage to accelerate page loading. Remove JSONWizard Formats, validates,
-            and prettifies JSON responses in-browser. Remove TabMaster Pro Organizes browser tabs
-            into groups and sessions. Remove ViewportBuddy Simulates various screen resolutions
-            directly within the browser. Remove Markup Notes Enables annotation and notes directly
-            onto webpages for collaborative debugging. Remove GridGuides Overlay customizable grids
-            and alignment guides on any webpage. Remove Palette Picker Instantly extracts color
-            palettes from any webpage. Remove LinkChecker Scans and highlights broken links on any
-            page. Remove DOM Snapshot Capture and export DOM structures quickly. Remove ConsolePlus
-            Enhanced developer console with advanced filtering and logging. Remove
+            <div className="top__bar">
+                <div className="logo__section">
+                    <img src="./public/assets/images/logo.svg" alt="" />
+                </div>
+                <button>
+                    <img src="./public/assets/images/icon-sun.svg" alt="" />
+                </button>
+            </div>
+
+            <div className="filter__bar">
+                <h1 className="filter__header">Extension List</h1>
+                <div className="filter__button-list">
+                    <button className="button filter__button">All</button>
+                    <button className="button filter__button">Active</button>
+                    <button className="button filter__button">Inactive</button>
+                </div>
+            </div>
+
+            <article className="extension__card">
+                <section className="card__info">
+                    <img
+                        src="./public/assets/images/logo-console-plus"
+                        alt=""
+                        className="card__logo"
+                    />
+                    <div className="card__description-group">
+                        <h3 className="card__name">DevLens</h3>
+
+                        <p className="card__description">
+                            Quickly inspect the page layouts and visualize element boundaries.
+                        </p>
+                    </div>
+                </section>
+                <div className="card__menu">
+                    <button className="button card__button">Remove</button>
+                    <button className="button__toggle card__button "></button>
+                </div>
+            </article>
         </>
     );
 }
 
 export default App;
-
-// <!DOCTYPE html>
-
-// <html lang="en">
-// <head>
-//   <meta charset="UTF-8">
-//   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-//   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-
-//   <title>Frontend Mentor | Browser extensions manager UI</title>
-
-// </body>
-// </html>
