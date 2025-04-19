@@ -2,13 +2,13 @@ import "./App.css";
 
 function App() {
     return (
-        <>
+        <div className="extension__app">
             <div className="top__bar">
                 <div className="logo__section">
-                    <img src="./public/assets/images/logo.svg" alt="" />
+                    <img src="./src/assets/images/main-logo.svg" alt="" />
                 </div>
-                <button>
-                    <img src="./public/assets/images/icon-sun.svg" alt="" />
+                <button className="button theme__button">
+                    <img src="./src/assets/images/icon-moon.svg" alt="" />
                 </button>
             </div>
 
@@ -24,7 +24,7 @@ function App() {
             <article className="extension__card">
                 <section className="card__info">
                     <img
-                        src="./public/assets/images/logo-console-plus"
+                        src="./src/assets/images/logo-console-plus.svg"
                         alt=""
                         className="card__logo"
                     />
@@ -41,7 +41,7 @@ function App() {
                     <button className="button__toggle card__button "></button>
                 </div>
             </article>
-        </>
+        </div>
     );
 }
 
