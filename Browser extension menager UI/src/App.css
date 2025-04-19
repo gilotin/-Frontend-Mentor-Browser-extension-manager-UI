@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Noto Sans';
-    src: url('../public/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+    src: url('../src/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'Noto Sans';
-    src: url('../public/assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    src: url('../src/assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
     font-weight: 100 900;
     font-style: italic;
     font-display: swap;
@@ -39,8 +39,11 @@
 
     /* Border */
 
-    --border-shadow: 0 1px var(--neutral-200);
+    --border-shadow: 0 2px var(--neutral-200);
+    --border: 1px solid var(--neutral-300);
 
+    /* Margins */
+    --margin-bottom: 1rem
 }
 
 body {
@@ -53,31 +56,38 @@ body {
     padding: 1rem clamp(1rem, 5vw, 4rem);
 }
 
+/* Generic */
+
 .button {
     background: var(--neutral-0);
     border-radius: 4rem;
-    border: 1px solid var(--neutral-300);
+    border: var(--border);
     box-shadow: var(--border-shadow);
     cursor: pointer;
     padding: .4rem 1rem;
+    font-weight: 500;
 }
 
-
-.extension__app {
-    /* border: 1px solid red; */
-
+.button:focus {
+    outline: 2px solid var(--red-700);
 }
+
+/* Extension */
+
+
+
+/* Top bar-menu */
 
 .top__bar {
     align-items: center;
     background-color: var(--light-gradient);
     background-color: var(--neutral-0);
     border-radius: .6rem;
-    border: 1px solid var(--neutral-100);
+    border: var(--border);
     box-shadow: var(--border-shadow);
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.6rem;
+    margin-bottom: var(--margin-bottom);
     padding: .4rem .6rem;
 }
 
@@ -87,4 +97,61 @@ body {
     border: none;
     box-shadow: none;
     padding: .8rem;
+}
+
+/* Filter bar-menu */
+
+.filter__bar {
+    margin-bottom: calc(var(--margin-bottom) * 2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.filter__header {
+    margin-bottom: var(--margin-bottom)
+}
+
+
+.filter__button {
+    margin-inline: .3rem;
+    font-size: 1.2rem;
+}
+
+.filter__button:active {
+    background-color: var(--red-700);
+    color: var(--neutral-0);
+}
+
+.extension__card {
+    border: var(--border);
+    box-shadow: var(--border-shadow);
+    border-radius: 1rem;
+    padding: 1.2rem;
+    background-color: var(--neutral-0);
+    display: grid;
+    margin-bottom: var(--margin-bottom);
+    /* MUST USE GRID here this is just for now!!! */
+    max-width: 360px;
+}
+
+.card__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 1.2rem;
+    margin-bottom: calc(var(--margin-bottom) * 3);
+}
+
+.card__description-group>p {
+    color: var(--neutral-600);
+}
+
+.card__menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__button {
+    box-shadow: none;
 }
