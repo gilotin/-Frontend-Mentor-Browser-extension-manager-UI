@@ -61,8 +61,8 @@ function App() {
                 <div className="card__menu">
                     <button className="button card__button">Remove</button>
                     <div className="toggle__container">
-                        <label htmlFor="toggle__button" className="toggle__label"></label>
                         <input className="button__toggle" type="checkbox" id="toggle__button" />
+                        <label htmlFor="toggle__button" className="toggle__label"></label>
                     </div>
                 </div>
             </article>
