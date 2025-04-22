@@ -38,7 +38,9 @@ function App() {
                 </section>
                 <div className="card__menu">
                     <button className="button card__button">Remove</button>
-                    <button className="button__toggle card__button "></button>
+                    <div className="button__toggle">
+                        <input type="checkbox" id="check" />
+                    </div>
                 </div>
             </article>
             <article className="extension__card">
@@ -58,7 +60,10 @@ function App() {
                 </section>
                 <div className="card__menu">
                     <button className="button card__button">Remove</button>
-                    <button className="button__toggle card__button "></button>
+                    <div className="toggle__container">
+                        <label htmlFor="toggle__button" className="toggle__label"></label>
+                        <input className="button__toggle" type="checkbox" id="toggle__button" />
+                    </div>
                 </div>
             </article>
             <article className="extension__card">
@@ -78,7 +83,10 @@ function App() {
                 </section>
                 <div className="card__menu">
                     <button className="button card__button">Remove</button>
-                    <button className="button__toggle card__button "></button>
+
+                    <div className="button__toggle">
+                        <input type="checkbox" id="check" />
+                    </div>
                 </div>
             </article>
         </div>
