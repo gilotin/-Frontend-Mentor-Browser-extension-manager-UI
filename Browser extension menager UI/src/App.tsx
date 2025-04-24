@@ -15,9 +15,24 @@ function App() {
             <div className="filter__bar">
                 <h1 className="filter__header">Extension List</h1>
                 <div className="filter__button-list">
-                    <button className="button filter__button">All</button>
-                    <button className="button filter__button">Active</button>
-                    <button className="button filter__button">Inactive</button>
+                    <div className="filter-button__container">
+                        <input className="filter__input" type="checkbox" id="filter__all" />
+                        <label className="filter__input-label" htmlFor="filter__all">
+                            All
+                        </label>
+                    </div>
+                    <div className="filter-button__container">
+                        <input className="filter__input" type="checkbox" id="filter__active" />
+                        <label className="filter__input-label" htmlFor="filter__active">
+                            Active
+                        </label>
+                    </div>
+                    <div className="filter-button__container">
+                        <input className="filter__input" type="checkbox" id="filter__inactive" />
+                        <label className="filter__input-label" htmlFor="filter__inactive">
+                            Inactive
+                        </label>
+                    </div>
                 </div>
             </div>
 
@@ -38,8 +53,9 @@ function App() {
                 </section>
                 <div className="card__menu">
                     <button className="button card__button">Remove</button>
-                    <div className="button__toggle">
-                        <input type="checkbox" id="check" />
+                    <div className="toggle__container">
+                        <input className="button__toggle" type="checkbox" id="toggle__button1" />
+                        <label htmlFor="toggle__button1" className="toggle__label"></label>
                     </div>
                 </div>
             </article>
@@ -61,8 +77,8 @@ function App() {
                 <div className="card__menu">
                     <button className="button card__button">Remove</button>
                     <div className="toggle__container">
-                        <input className="button__toggle" type="checkbox" id="toggle__button" />
-                        <label htmlFor="toggle__button" className="toggle__label"></label>
+                        <input className="button__toggle" type="checkbox" id="toggle__button2" />
+                        <label htmlFor="toggle__button2" className="toggle__label"></label>
                     </div>
                 </div>
             </article>
@@ -84,8 +100,13 @@ function App() {
                 <div className="card__menu">
                     <button className="button card__button">Remove</button>
 
-                    <div className="button__toggle">
-                        <input type="checkbox" id="check" />
+                    <div className="toggle__container">
+                        <input
+                            className="button__toggle"
+                            type="checkbox"
+                            id="toggle__button3       "
+                        />
+                        <label htmlFor="toggle__button3       " className="toggle__label"></label>
                     </div>
                 </div>
             </article>

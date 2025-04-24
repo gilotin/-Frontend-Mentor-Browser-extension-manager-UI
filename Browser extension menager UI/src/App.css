@@ -103,26 +103,56 @@ body {
 /* Filter bar-menu */
 
 .filter__bar {
+
+    /* To try container query for justify-content */
     margin-bottom: calc(var(--margin-bottom) * 2);
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center
+    justify-content: center;
+    align-items: center;
 }
+
+
 
 .filter__header {
-    margin-bottom: var(--margin-bottom)
+    margin-bottom: var(--margin-bottom);
 }
 
+.filter__button-list {
+    display: flex;
+    gap: .75rem
+}
 
-.filter__button {
-    margin-inline: .3rem;
+.filter__input {
+    appearance: none;
+}
+
+.filter__input-label {
+    border: var(--border);
+    padding: .6rem 1.2rem;
+    border-radius: 2rem;
+    font-weight: 500;
     font-size: 1.2rem;
+
 }
 
-.filter__button:active {
-    background-color: var(--red-700);
+.filter__input:checked+.filter__input-label {
+    background: var(--red-700);
     color: var(--neutral-0);
 }
+
+.filter__input:hover+.filter__input-label {
+    background: var(--red-400);
+    cursor: pointer;
+}
+
+.filter__input:focus+.filter__input-label {
+    outline: 2px solid var(--red-700);
+    outline-offset: 1px;
+}
+
+
 
 .extension__card {
     border: var(--border);
@@ -203,5 +233,5 @@ body {
 
 .button__toggle:focus+.toggle__label {
     outline: 2px solid var(--red-700);
-    outline-offset: 2px;
+    outline-offset: 1px;
 }
