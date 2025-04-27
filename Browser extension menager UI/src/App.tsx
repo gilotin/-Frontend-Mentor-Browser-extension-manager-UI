@@ -35,81 +35,146 @@ function App() {
                     </div>
                 </div>
             </div>
-
-            <article className="extension__card">
-                <section className="card__info">
-                    <img
-                        src="./src/assets/images/logo-console-plus.svg"
-                        alt=""
-                        className="card__logo"
-                    />
-                    <div className="card__description-group">
-                        <h3 className="card__name">DevLens</h3>
-
-                        <p className="card__description">
-                            Quickly inspect the page layouts and visualize element boundaries.
-                        </p>
-                    </div>
-                </section>
-                <div className="card__menu">
-                    <button className="button card__button">Remove</button>
-                    <div className="toggle__container">
-                        <input className="button__toggle" type="checkbox" id="toggle__button1" />
-                        <label htmlFor="toggle__button1" className="toggle__label"></label>
-                    </div>
-                </div>
-            </article>
-            <article className="extension__card">
-                <section className="card__info">
-                    <img
-                        src="./src/assets/images/logo-console-plus.svg"
-                        alt=""
-                        className="card__logo"
-                    />
-                    <div className="card__description-group">
-                        <h3 className="card__name">DevLens</h3>
-
-                        <p className="card__description">
-                            Quickly inspect the page layouts and visualize element boundaries.
-                        </p>
-                    </div>
-                </section>
-                <div className="card__menu">
-                    <button className="button card__button">Remove</button>
-                    <div className="toggle__container">
-                        <input className="button__toggle" type="checkbox" id="toggle__button2" />
-                        <label htmlFor="toggle__button2" className="toggle__label"></label>
-                    </div>
-                </div>
-            </article>
-            <article className="extension__card">
-                <section className="card__info">
-                    <img
-                        src="./src/assets/images/logo-console-plus.svg"
-                        alt=""
-                        className="card__logo"
-                    />
-                    <div className="card__description-group">
-                        <h3 className="card__name">DevLens</h3>
-
-                        <p className="card__description">
-                            Quickly inspect the page layouts and visualize element boundaries.
-                        </p>
-                    </div>
-                </section>
-                <div className="card__menu">
-                    <button className="button card__button">Remove</button>
-
-                    <div className="toggle__container">
-                        <input
-                            className="button__toggle"
-                            type="checkbox"
-                            id="toggle__button3       "
+            <div className="grid-container">
+                <article className="extension__card">
+                    <section className="card__info">
+                        <img
+                            src="./src/assets/images/logo-console-plus.svg"
+                            alt=""
+                            className="card__logo"
                         />
-                        <label htmlFor="toggle__button3       " className="toggle__label"></label>
+                        <div className="card__description-group">
+                            <h3 className="card__name">DevLens</h3>
+
+                            <p className="card__description">
+                                Quickly inspect the page layouts and visualize element boundaries.
+                            </p>
+                        </div>
+                    </section>
+                    <div className="card__menu">
+                        <button className="button card__button">Remove</button>
+                        <div className="toggle__container">
+                            <input
+                                className="button__toggle"
+                                type="checkbox"
+                                id="toggle__button1"
+                            />
+                            <label htmlFor="toggle__button1" className="toggle__label"></label>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+                <article className="extension__card">
+                    <section className="card__info">
+                        <img
+                            src="./src/assets/images/logo-console-plus.svg"
+                            alt=""
+                            className="card__logo"
+                        />
+                        <div className="card__description-group">
+                            <h3 className="card__name">DevLens</h3>
+
+                            <p className="card__description">
+                                Quickly inspect the page layouts and visualize element boundaries.
+                            </p>
+                        </div>
+                    </section>
+                    <div className="card__menu">
+                        <button className="button card__button">Remove</button>
+                        <div className="toggle__container">
+                            <input
+                                className="button__toggle"
+                                type="checkbox"
+                                id="toggle__button2"
+                            />
+                            <label htmlFor="toggle__button2" className="toggle__label"></label>
+                        </div>
+                    </div>
+                </article>
+                <article className="extension__card">
+                    <section className="card__info">
+                        <img
+                            src="./src/assets/images/logo-console-plus.svg"
+                            alt=""
+                            className="card__logo"
+                        />
+                        <div className="card__description-group">
+                            <h3 className="card__name">DevLens</h3>
+
+                            <p className="card__description">
+                                Quickly inspect the page layouts and visualize element boundaries.
+                            </p>
+                        </div>
+                    </section>
+                    <div className="card__menu">
+                        <button className="button card__button">Remove</button>
+
+                        <div className="toggle__container">
+                            <input
+                                className="button__toggle"
+                                type="checkbox"
+                                id="toggle__button3"
+                            />
+                            <label htmlFor="toggle__button3" className="toggle__label"></label>
+                        </div>
+                    </div>
+                </article>
+                <article className="extension__card">
+                    <section className="card__info">
+                        <img
+                            src="./src/assets/images/logo-console-plus.svg"
+                            alt=""
+                            className="card__logo"
+                        />
+                        <div className="card__description-group">
+                            <h3 className="card__name">DevLens</h3>
+
+                            <p className="card__description">
+                                Quickly inspect the page layouts and visualize element boundaries.
+                            </p>
+                        </div>
+                    </section>
+                    <div className="card__menu">
+                        <button className="button card__button">Remove</button>
+
+                        <div className="toggle__container">
+                            <input
+                                className="button__toggle"
+                                type="checkbox"
+                                id="toggle__button3"
+                            />
+                            <label htmlFor="toggle__button3" className="toggle__label"></label>
+                        </div>
+                    </div>
+                </article>
+                <article className="extension__card">
+                    <section className="card__info">
+                        <img
+                            src="./src/assets/images/logo-console-plus.svg"
+                            alt=""
+                            className="card__logo"
+                        />
+                        <div className="card__description-group">
+                            <h3 className="card__name">DevLens</h3>
+
+                            <p className="card__description">
+                                Quickly inspect the page layouts and visualize element boundaries.
+                            </p>
+                        </div>
+                    </section>
+                    <div className="card__menu">
+                        <button className="button card__button">Remove</button>
+
+                        <div className="toggle__container">
+                            <input
+                                className="button__toggle"
+                                type="checkbox"
+                                id="toggle__button3"
+                            />
+                            <label htmlFor="toggle__button3" className="toggle__label"></label>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
     );
 }

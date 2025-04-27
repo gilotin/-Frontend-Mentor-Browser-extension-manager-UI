@@ -46,13 +46,17 @@
     --margin-bottom: 1rem
 }
 
-.extension__app {
+body {
     container-type: inline-size;
     background: var(--light-gradient);
     color: var(--neutral-900);
     font-family: "Noto Sans", sans-serif;
-    min-height: 100vh;
     padding: 3rem clamp(2rem, 10vw, 8rem);
+}
+
+.extension__app {
+    max-width: 77.5rem;
+    margin: auto;
 }
 
 /* Generic */
@@ -87,7 +91,7 @@
     box-shadow: var(--border-shadow);
     display: flex;
     justify-content: space-between;
-    margin-bottom: var(--margin-bottom);
+    margin-bottom: calc(var(--margin-bottom) *3);
     padding: .4rem .6rem;
 }
 
@@ -97,6 +101,10 @@
     border: none;
     box-shadow: none;
     padding: .8rem;
+}
+
+.theme__button:hover {
+    background-color: var(--neutral-300);
 }
 
 /* Filter bar-menu */
@@ -119,10 +127,10 @@
 }
 
 
-
+/* 
 .filter__header {
     margin-bottom: var(--margin-bottom);
-}
+} */
 
 .filter__button-list {
     display: flex;
@@ -152,6 +160,7 @@
 .filter__input:hover+.filter__input-label {
     background: var(--red-400);
     cursor: pointer;
+    border: 1px solid var(--red-500);
 }
 
 .filter__input:focus+.filter__input-label {
@@ -159,6 +168,12 @@
     outline-offset: 1px;
 }
 
+.grid-container {
+    display: grid;
+    gap: 1.2rem;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
 
 
 .extension__card {
@@ -167,10 +182,7 @@
     border-radius: 1rem;
     padding: 1.2rem;
     background-color: var(--neutral-0);
-    display: grid;
-    margin-bottom: var(--margin-bottom);
-    /* MUST USE GRID here this is just for now!!! */
-    max-width: 360px;
+
 }
 
 .card__info {
@@ -192,6 +204,11 @@
 
 .card__button {
     box-shadow: none;
+}
+
+.card__button:hover {
+    background-color: var(--red-700);
+    color: var(--neutral-0);
 }
 
 /* toggle button */
@@ -216,6 +233,11 @@
     height: 1.4rem;
     border-radius: 6rem;
     position: relative;
+}
+
+.toggle__label:hover,
+.button__toggle:checked:hover+.toggle__label {
+    background: var(--red-500);
 }
 
 .toggle__label::before {
