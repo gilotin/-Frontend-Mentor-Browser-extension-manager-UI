@@ -51,7 +51,8 @@ body {
     background: var(--light-gradient);
     color: var(--neutral-900);
     font-family: "Noto Sans", sans-serif;
-    padding: 3rem clamp(2rem, 10vw, 8rem);
+    padding: clamp(.6rem, 5vw, 8rem);
+    min-height: 100dvh;
 }
 
 .extension__app {
@@ -171,8 +172,8 @@ body {
 .grid-container {
     display: grid;
     gap: 1.2rem;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
 }
 
 
@@ -185,11 +186,17 @@ body {
 
 }
 
+.card__name {
+    margin-bottom: var(--margin-bottom);
+    font-size: 1.5rem;
+}
+
 .card__info {
-    display: flex;
-    justify-content: space-between;
     align-items: start;
+    display: flex;
+    font-weight: 500;
     gap: 1.2rem;
+    justify-content: space-between;
     margin-bottom: calc(var(--margin-bottom) * 3);
 }
 
