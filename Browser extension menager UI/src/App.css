@@ -37,33 +37,90 @@
     --light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
     --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 
-    /* Border */
 
-    --border-shadow: 0 2px var(--neutral-200);
-    --border: 1px solid var(--neutral-200);
+
 
     /* Margins */
-    --margin-bottom: 1rem
-}
+    --margin-bottom: 1rem;
 
-body {
-    container-type: inline-size;
-    background: var(--light-gradient);
-    color: var(--neutral-900);
-    font-family: "Noto Sans", sans-serif;
-    padding: clamp(.6rem, 5vw, 8rem);
-    min-height: 100dvh;
+
+    /* Theme colors - white */
+    /* background colors */
+    --app-background-color-theme: var(--light-gradient);
+    --background-color: var(--neutral-0);
+
+    /* button elements */
+    --button-theme-background: var(--neutral-100);
+    --button-theme-background-hover: var(--neutral-300);
+    --button-background-checked: var(--red-700);
+    --button-background-color-hover: var(--red-400);
+    --button-toggle-background-color: var(--neutral-300);
+    --button-card-bg-color-hover: var(--red-700);
+    --button-card-text-color: var(--neutral-900);
+    --button-card-text-color-hover: var(--neutral-0);
+    --button-font-color-checked: var(--neutral-0);
+
+    /* Border elements */
+    --border-top-bar: 1px solid var(--neutral-200);
+    --border-shadow: 0 2px var(--neutral-200);
+    --border: 1px solid var(--neutral-200);
+    --border-outline: 2px solid var(--red-700);
+
+    /* fonts */
+    --font-main-color: var(--neutral-900);
+    --font-card-description-color: var(--neutral-600);
+
+    /* Logo color */
+    --logo-color: var(--red-700)
 }
 
 .extension__app {
-    max-width: 77.5rem;
-    margin: auto;
+    container-type: inline-size;
+    color: var(--font-main-color);
+    background: var(--app-background-color-theme);
+    font-family: "Noto Sans", sans-serif;
+    padding: 5rem clamp(.6rem, 8vw, 7rem);
+    min-height: 100dvh;
+}
+
+
+
+.extension__app[data-theme="dark"] {
+    /* Theme colors - dark */
+    /* background colors */
+    --app-background-color-theme: var(--dark-gradient);
+    --background-color: var(--neutral-800);
+
+    /* button elements */
+    --button-theme-background: var(--neutral-700);
+    --button-theme-background-hover: var(--neutral-600);
+    --button-background-checked: var(--red-400);
+    --button-background-color-hover: var(--red-500);
+    --button-toggle-background-color: var(--neutral-600);
+    --button-card-text-color: var(--neutral-0);
+    --button-card-text-color-hover: var(--neutral-900);
+    --button-card-bg-color-hover: var(--red-400);
+
+
+    /* Border elements */
+    --border-top-bar: none;
+    --border-shadow: none;
+    --border-outline: 2px solid var(--red-700);
+    --border: 1px solid var(--neutral-600);
+
+    /* Card Elements */
+    --font-card-description-color: var(--neutral-300);
+    --button-font-color-checked: var(--neutral-900);
+    --font-main-color: var(--neutral-0);
+
+    /* Logo color */
+    --logo-color: var(--red-400)
 }
 
 /* Generic */
 
 .button {
-    background: var(--neutral-0);
+    background: var(--background-color);
     border-radius: 4rem;
     border: var(--border);
     box-shadow: var(--border-shadow);
@@ -73,22 +130,20 @@ body {
 }
 
 .button:focus {
-    outline: 2px solid var(--red-700);
-    outline-offset: 2px;
+    outline: var(--border-outline);
+    outline-offset: 1px;
 }
 
+
+
 /* Extension */
-
-
-
 /* Top bar-menu */
 
 .top__bar {
     align-items: center;
-    background-color: var(--light-gradient);
-    background-color: var(--neutral-0);
+    background-color: var(--background-color);
     border-radius: .8rem;
-    border: var(--border);
+    border: var(--border-top-bar);
     box-shadow: var(--border-shadow);
     display: flex;
     justify-content: space-between;
@@ -96,8 +151,17 @@ body {
     padding: .4rem .6rem;
 }
 
+.logo__section>svg>path {
+    fill: var(--font-main-color);
+}
+
+.logo__section>svg>g>path {
+    fill: var(--logo-color);
+}
+
+
 .theme__button {
-    background: var(--neutral-100);
+    background: var(--button-theme-background);
     border-radius: .6rem;
     border: none;
     box-shadow: none;
@@ -105,7 +169,7 @@ body {
 }
 
 .theme__button:hover {
-    background-color: var(--neutral-300);
+    background-color: var(--button-theme-background-hover);
 }
 
 /* Filter bar-menu */
@@ -117,7 +181,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* margin-inline: 1rem; */
     gap: 1rem;
 }
 
@@ -127,11 +190,6 @@ body {
     }
 }
 
-
-/* 
-.filter__header {
-    margin-bottom: var(--margin-bottom);
-} */
 
 .filter__button-list {
     display: flex;
@@ -143,6 +201,7 @@ body {
 }
 
 .filter__input-label {
+    background: var(--neutral-700);
     border: var(--border);
     box-shadow: var(--border-shadow);
     padding: .4rem 1rem;
@@ -153,19 +212,20 @@ body {
 }
 
 .filter__input:checked+.filter__input-label {
-    background: var(--red-700);
-    color: var(--neutral-0);
+    background: var(--button-background-checked);
+    color: var(--button-font-color-checked);
     border: none;
 }
 
 .filter__input:hover+.filter__input-label {
-    background: var(--red-400);
+    background: var(--button-background-color-hover);
+    color: var(--button-font-color-checked);
     cursor: pointer;
-    border: 1px solid var(--red-500);
+    border: none;
 }
 
 .filter__input:focus+.filter__input-label {
-    outline: 2px solid var(--red-700);
+    outline: var(--border-outline);
     outline-offset: 1px;
 }
 
@@ -182,7 +242,7 @@ body {
     box-shadow: var(--border-shadow);
     border-radius: 1rem;
     padding: 1.2rem;
-    background-color: var(--neutral-0);
+    background-color: var(--background-color);
 
 }
 
@@ -200,8 +260,8 @@ body {
     margin-bottom: calc(var(--margin-bottom) * 3);
 }
 
-.card__description-group>p {
-    color: var(--neutral-600);
+.card__paragraph {
+    color: var(--font-card-description-color);
 }
 
 .card__menu {
@@ -211,11 +271,12 @@ body {
 
 .card__button {
     box-shadow: none;
+    color: var(--button-card-text-color);
 }
 
 .card__button:hover {
-    background-color: var(--red-700);
-    color: var(--neutral-0);
+    background-color: var(--button-card-bg-color-hover);
+    color: var(--button-card-text-color-hover);
 }
 
 /* toggle button */
@@ -231,11 +292,10 @@ body {
 }
 
 .toggle__label {
-
     display: flex;
     align-items: center;
     cursor: pointer;
-    background-color: var(--neutral-300);
+    background-color: var(--button-toggle-background-color);
     width: 2.4rem;
     height: 1.4rem;
     border-radius: 6rem;
@@ -244,7 +304,7 @@ body {
 
 .toggle__label:hover,
 .button__toggle:checked:hover+.toggle__label {
-    background: var(--red-500);
+    background: var(--button-background-color-hover);
 }
 
 .toggle__label::before {
@@ -259,7 +319,7 @@ body {
 }
 
 .button__toggle:checked+.toggle__label {
-    background-color: var(--red-700);
+    background-color: var(--button-background-checked);
 }
 
 .button__toggle:checked+.toggle__label::before {
@@ -268,6 +328,6 @@ body {
 }
 
 .button__toggle:focus+.toggle__label {
-    outline: 2px solid var(--red-700);
+    outline: var(--border-outline);
     outline-offset: 1px;
 }
