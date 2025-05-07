@@ -81,7 +81,7 @@
     color: var(--font-main-color);
     background: var(--app-background-color-theme);
     font-family: "Noto Sans", sans-serif;
-    padding: 5rem clamp(.6rem, 8vw, 7rem);
+    padding: 5rem clamp(.6rem, 8vw, 10rem);
     min-height: 100dvh;
 }
 
@@ -236,11 +236,11 @@
 .grid-container {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 
 }
 
-@container (width < 370px) {
+@container (width < 876px) {
     .grid-container {
         grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     }
