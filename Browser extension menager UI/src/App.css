@@ -175,13 +175,13 @@
 /* Filter bar-menu */
 
 .filter__bar {
-    margin-bottom: calc(var(--margin-bottom) * 2);
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     gap: 1rem;
+    justify-content: center;
+    margin-bottom: calc(var(--margin-bottom) * 2);
 }
 
 @container (width > 560px) {
@@ -201,7 +201,7 @@
 }
 
 .filter__input-label {
-    background: var(--neutral-700);
+    background: var(--background-color);
     border: var(--border);
     box-shadow: var(--border-shadow);
     padding: .4rem 1rem;

@@ -1,8 +1,29 @@
+import { useState } from "react";
 import "./App.css";
+import darkThemeIcon from "../src/assets//images/icon-moon.svg";
+import lightThemeIcon from "../src/assets//images/icon-sun.svg";
 
 function App() {
+    const [theme, setTheme] = useState({ state: "white", icon: darkThemeIcon });
+
+    function changingTheme() {
+        if (theme.state === "white") {
+            setTheme((prevState) => ({
+                ...prevState,
+                state: "dark",
+                icon: lightThemeIcon,
+            }));
+        } else {
+            setTheme((prevState) => ({
+                ...prevState,
+                state: "white",
+                icon: darkThemeIcon,
+            }));
+        }
+    }
+
     return (
-        <div data-theme="dark" className="extension__app">
+        <div data-theme={theme.state} className="extension__app">
             <div className="top__bar">
                 <div className="logo__section">
                     <svg
@@ -31,8 +52,8 @@ function App() {
                         </defs>
                     </svg>
                 </div>
-                <button className="button theme__button">
-                    <img src="./src/assets/images/icon-sun.svg" alt="" />
+                <button onClick={changingTheme} className="button theme__button">
+                    <img src={theme.icon} alt="" />
                 </button>
             </div>
 
