@@ -2,29 +2,18 @@ import { useState } from "react";
 import "./App.css";
 import darkThemeIcon from "../src/assets//images/icon-moon.svg";
 import lightThemeIcon from "../src/assets//images/icon-sun.svg";
+import ThemeBar from "./components/ThemeBar";
 
+interface ThemeState {
+    state: "white" | "dark";
+    icon: string;
+}
 function App() {
-    const [theme, setTheme] = useState({ state: "white", icon: darkThemeIcon });
-
-    function changingTheme() {
-        if (theme.state === "white") {
-            setTheme((prevState) => ({
-                ...prevState,
-                state: "dark",
-                icon: lightThemeIcon,
-            }));
-        } else {
-            setTheme((prevState) => ({
-                ...prevState,
-                state: "white",
-                icon: darkThemeIcon,
-            }));
-        }
-    }
+    const [theme, setTheme] = useState<ThemeState>({ state: "white", icon: darkThemeIcon });
 
     return (
         <div data-theme={theme.state} className="extension__app">
-            <div className="top__bar">
+            {/* <div className="theme__bar">
                 <div className="logo__section">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +44,9 @@ function App() {
                 <button onClick={changingTheme} className="button theme__button">
                     <img src={theme.icon} alt="" />
                 </button>
-            </div>
+            </div> */}
+
+            <ThemeBar theme={theme} setTheme={setTheme} />
 
             <div className="filter__bar">
                 <h1 className="filter__header">Extension List</h1>

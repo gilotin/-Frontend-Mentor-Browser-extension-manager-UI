@@ -139,7 +139,7 @@
 /* Extension */
 /* Top bar-menu */
 
-.top__bar {
+.theme__bar {
     align-items: center;
     background-color: var(--background-color);
     border-radius: .8rem;
