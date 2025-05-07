@@ -1,5 +1,4 @@
-import { useState } from "react";
-import dataInfo from "../data/data.json";
+import { useCallback } from "react";
 
 interface DataStructure {
     logo: string;
@@ -8,21 +7,34 @@ interface DataStructure {
     isActive: boolean;
 }
 
-function ExtensionCard() {
-    const [cardData, setCardData] = useState<DataStructure[]>(dataInfo);
+interface cardProps {
+    cardData: DataStructure[];
+    setCardData: React.Dispatch<React.SetStateAction<DataStructure[]>>;
+}
 
-    function handleActiveState(index: number) {
-        setCardData((prevState) =>
-            prevState.map((item, i) => (i === index ? { ...item, isActive: !item.isActive } : item))
-        );
-    }
+function ExtensionCard({ cardData, setCardData }: cardProps) {
+    const handleActiveState = useCallback(
+        // Testing useCallBack to see how it works.
+        (index: number) => {
+            setCardData((prevState) =>
+                prevState.map((item, i) =>
+                    i === index ? { ...item, isActive: !item.isActive } : item
+                )
+            );
+        },
+        [setCardData]
+    );
 
-    function removeButton(index: number) {
-        setCardData((prevState) => prevState.filter((_, i) => i !== index));
-    }
+    const removeButton = useCallback(
+        // Testing useCallBack to see how it works.
+        (index: number) => {
+            setCardData((prevState) => prevState.filter((_, i) => i !== index));
+        },
+        [setCardData]
+    );
 
     const card = cardData.map((element: DataStructure, index: number) => (
-        <article key={index} className="extension__card">
+        <article key={element.name} className="extension__card">
             <section className="card__info">
                 <img src={element.logo} alt="" className="card__logo" />
                 <div className="card__description-group">
@@ -50,5 +62,4 @@ function ExtensionCard() {
 
     return card;
 }
-
 export default ExtensionCard;

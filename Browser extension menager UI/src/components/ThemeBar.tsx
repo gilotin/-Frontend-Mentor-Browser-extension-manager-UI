@@ -1,3 +1,4 @@
+import { memo } from "react";
 import darkThemeIcon from "../assets/images/icon-moon.svg";
 import lightThemeIcon from "../assets/images/icon-sun.svg";
 
@@ -10,7 +11,8 @@ interface ThemeBarProps {
     theme: ThemeState;
     setTheme: React.Dispatch<React.SetStateAction<ThemeState>>;
 }
-function ThemeBar({ theme, setTheme }: ThemeBarProps) {
+const ThemeBar = memo(({ theme, setTheme }: ThemeBarProps) => {
+    // Testing memo to see how it works
     function changingTheme() {
         if (theme.state === "white") {
             setTheme((prevState) => ({
@@ -61,6 +63,6 @@ function ThemeBar({ theme, setTheme }: ThemeBarProps) {
             </button>
         </div>
     );
-}
+});
 
 export default ThemeBar;
