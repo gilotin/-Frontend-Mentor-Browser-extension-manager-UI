@@ -10,11 +10,12 @@ interface DataStructure {
 
 interface cardProps {
     cardData: DataStructure[];
-    filter: FilterType;
     setCardData: React.Dispatch<React.SetStateAction<DataStructure[]>>;
 }
 
-function ExtensionCard({ cardData, filter, setCardData }: cardProps) {
+// Callbacks are just used to test
+
+function ExtensionCard({ cardData, setCardData }: cardProps) {
     const handleActiveState = useCallback(
         (name: string) => {
             setCardData((prevState) =>

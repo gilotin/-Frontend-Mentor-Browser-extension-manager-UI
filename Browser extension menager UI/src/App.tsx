@@ -25,6 +25,10 @@ function App() {
     const [cardData, setCardData] = useState<DataStructure[]>(dataInfo);
     const [filter, setFilter] = useState<FilterType>("all");
 
+    // This logic is here because its just easer for the current demo
+    // , you can move it with some refactoring
+    // , but have to start a new project.
+
     const filteredCards = cardData.filter((item) => {
         if (filter === "all") return true;
         if (filter === "active") return item.isActive;
@@ -38,7 +42,7 @@ function App() {
             <FilterBar filter={filter} setFilter={setFilter} />
 
             <div className="grid-container">
-                <ExtensionCard filter={filter} cardData={filteredCards} setCardData={setCardData} />
+                <ExtensionCard cardData={filteredCards} setCardData={setCardData} />
             </div>
         </div>
     );
