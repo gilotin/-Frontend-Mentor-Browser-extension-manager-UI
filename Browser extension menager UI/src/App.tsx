@@ -18,17 +18,27 @@ interface ThemeState {
     icon: string;
 }
 
+export type FilterType = "all" | "active" | "inactive";
+
 function App() {
     const [theme, setTheme] = useState<ThemeState>({ state: "white", icon: darkThemeIcon });
     const [cardData, setCardData] = useState<DataStructure[]>(dataInfo);
+    const [filter, setFilter] = useState<FilterType>("all");
+
+    const filteredCards = cardData.filter((item) => {
+        if (filter === "all") return true;
+        if (filter === "active") return item.isActive;
+        if (filter === "inactive") return !item.isActive;
+        return true;
+    });
 
     return (
         <div data-theme={theme.state} className="extension__app">
             <ThemeBar theme={theme} setTheme={setTheme} />
-            <FilterBar />
+            <FilterBar filter={filter} setFilter={setFilter} />
 
             <div className="grid-container">
-                <ExtensionCard cardData={cardData} setCardData={setCardData} />
+                <ExtensionCard filter={filter} cardData={filteredCards} setCardData={setCardData} />
             </div>
         </div>
     );

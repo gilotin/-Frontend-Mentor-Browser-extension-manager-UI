@@ -195,7 +195,8 @@
 
 .filter__button-list {
     display: flex;
-    gap: .75rem
+    gap: .75rem;
+    border: none
 }
 
 .filter__input {

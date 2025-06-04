@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import { FilterType } from "../App";
 
 interface DataStructure {
     logo: string;
@@ -9,16 +10,16 @@ interface DataStructure {
 
 interface cardProps {
     cardData: DataStructure[];
+    filter: FilterType;
     setCardData: React.Dispatch<React.SetStateAction<DataStructure[]>>;
 }
 
-function ExtensionCard({ cardData, setCardData }: cardProps) {
+function ExtensionCard({ cardData, filter, setCardData }: cardProps) {
     const handleActiveState = useCallback(
-        // Testing useCallBack to see how it works.
-        (index: number) => {
+        (name: string) => {
             setCardData((prevState) =>
-                prevState.map((item, i) =>
-                    i === index ? { ...item, isActive: !item.isActive } : item
+                prevState.map((item) =>
+                    item.name === name ? { ...item, isActive: !item.isActive } : item
                 )
             );
         },
@@ -26,14 +27,13 @@ function ExtensionCard({ cardData, setCardData }: cardProps) {
     );
 
     const removeButton = useCallback(
-        // Testing useCallBack to see how it works.
-        (index: number) => {
-            setCardData((prevState) => prevState.filter((_, i) => i !== index));
+        (name: string) => {
+            setCardData((prevState) => prevState.filter((item) => item.name !== name));
         },
         [setCardData]
     );
 
-    const card = cardData.map((element: DataStructure, index: number) => (
+    const card = cardData.map((element: DataStructure) => (
         <article key={element.name} className="extension__card">
             <section className="card__info">
                 <img src={element.logo} alt="" className="card__logo" />
@@ -43,18 +43,21 @@ function ExtensionCard({ cardData, setCardData }: cardProps) {
                 </div>
             </section>
             <div className="card__menu">
-                <button onClick={() => removeButton(index)} className="button card__button">
+                <button onClick={() => removeButton(element.name)} className="button card__button">
                     Remove
                 </button>
                 <div className="toggle__container">
                     <input
                         checked={element.isActive}
-                        onChange={() => handleActiveState(index)}
+                        onChange={() => handleActiveState(element.name)}
                         className="button__toggle"
                         type="checkbox"
-                        id={`toggle__button-${index}`}
+                        id={`toggle__button-${element.name}`}
                     />
-                    <label htmlFor={`toggle__button-${index}`} className="toggle__label"></label>
+                    <label
+                        htmlFor={`toggle__button-${element.name}`}
+                        className="toggle__label"
+                    ></label>
                 </div>
             </div>
         </article>
