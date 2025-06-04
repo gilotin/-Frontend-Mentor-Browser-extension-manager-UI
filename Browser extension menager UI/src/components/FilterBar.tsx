@@ -14,7 +14,7 @@ interface FilteredDataProps {
     setFilter: React.Dispatch<React.SetStateAction<FilterType>>;
 }
 
-function FilterBar({ setFilter }: FilteredDataProps) {
+function FilterBar({ setFilter, filter }: FilteredDataProps) {
     function handleRadioBtn(e: ChangeEvent<HTMLInputElement>) {
         const buttonId = e.currentTarget.id;
         const buttonIcChecked = e.target.checked;
@@ -42,6 +42,7 @@ function FilterBar({ setFilter }: FilteredDataProps) {
                         type="radio"
                         id="filter__all"
                         name="filter"
+                        checked={filter === "all"}
                     />
                     <label className="filter__input-label" htmlFor="filter__all">
                         All

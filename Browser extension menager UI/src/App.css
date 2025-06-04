@@ -204,6 +204,7 @@
 }
 
 .filter__input-label {
+
     background: var(--background-color);
     border: var(--border);
     box-shadow: var(--border-shadow);
